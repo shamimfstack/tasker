@@ -2,8 +2,8 @@ import heroImg from "../../src/assets/hero-img.png"
 
 export default function Hero() {
     return (
-        <section className="pb-[114px] pt-20 md:mt-[100px]">
-            <div className="container lg:px-20">
+        <section className="pb-[114px] pt-20 md:mt-[100px] mx-auto">
+            <div className="container lg:px-20 mx-auto">
                 <div className="grid items-center gap-6 md:grid-cols-2">
                     <div className="flex justify-center md:order-2">
                         <img className="max-md:w-full" src={heroImg} width="326" height="290" alt="frame" />
