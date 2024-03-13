@@ -1,10 +1,11 @@
-// import { FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import PropTypes from "prop-types"
 
-export default function TaskList() {
+export default function TaskList({tasks}) {
     return (
         <div className="overflow-auto">
-            <table className="table-fixed overflow-auto xl:w-full">
-                <thead>
+            <table className="table-fixed overflow-auto xl:w-full text-white">
+                <thead className="">
                     <tr>
                         <th className="p-4 pb-8 text-sm font-semibold capitalize w-[48px]"></th>
                         <th className="p-4 pb-8 text-sm font-semibold capitalize w-[300px]">
@@ -30,12 +31,12 @@ export default function TaskList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {tasks.map((task) => (
+                    {tasks.map((task) => (
                         <tr
                             key={task.id}
                             className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
                             <td>
-                                <button onClick={() => onFav(task.id)}>
+                                <button>
                                     {task.isFavorite ? (
                                         <FaStar color="yellow" />
                                     ) : (
@@ -63,22 +64,26 @@ export default function TaskList() {
                                 <div className="flex items-center justify-center space-x-3">
                                     <button
                                         className="text-red-500"
-                                        onClick={() => onDelete(task.id)}
+                                        // onClick={() => onDelete(task.id)}
                                     >
                                         Delete
                                     </button>
                                     <button
                                         className="text-blue-500"
-                                        onClick={() => onEdit(task)}
+                                        // onClick={() => onEdit(task)}
                                     >
                                         Edit
                                     </button>
                                 </div>
                             </td>
                         </tr>
-                    ))} */}
+                    ))}
                 </tbody>
             </table>
         </div>
     );
+}
+
+TaskList.propTypes = {
+    tasks: PropTypes.array
 }
